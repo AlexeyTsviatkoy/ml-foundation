@@ -3,7 +3,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 import pandas as pd
 
-df = pd.read_csv('/home/alexey/Документы/Projects/ml-foundation/datasets/people.csv')
+df = pd.read_csv('../datasets/people.csv')
 
 X = df[["age"]]
 y = df["salary"]
