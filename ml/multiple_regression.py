@@ -2,7 +2,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
 import pandas as pd
-from mpl_toolkits.mplot3d import Axes3D
+from sklearn.metrics import r2_score
+
 
 df = pd.read_csv("../datasets/employees.csv")
 
@@ -21,12 +22,14 @@ predNew = reg.predict(X_new)
 print(reg.coef_, reg.intercept_)
 print(predNew)
 
+y_pred = reg.predict(X_test)
+print("R2:", r2_score(y_test, y_pred))
+
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
 
-scatter = ax.scatter3D(df["age"],df["experience"], df["salary"], color="blue", s = 50)
-
-scatter = ax.scatter3D(X_new["age"],X_new["experience"], predNew, color="red", s = 100)
+ax.scatter3D(df["age"],df["experience"], df["salary"], color="blue", s = 50)
+ax.scatter3D(X_new["age"],X_new["experience"], predNew, color="red", s = 100)
 
 ax.set_xlabel('age')
 ax.set_ylabel('experience')
