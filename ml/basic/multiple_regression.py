@@ -5,7 +5,7 @@ import pandas as pd
 from sklearn.metrics import r2_score
 
 
-df = pd.read_csv("../datasets/employees.csv")
+df = pd.read_csv("../../datasets/employees.csv")
 
 X = df[["age","experience"]]
 y = df["salary"]

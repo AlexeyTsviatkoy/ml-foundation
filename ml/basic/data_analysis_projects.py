@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score
 
-df = pd.read_csv("../datasets/housing.csv")
+df = pd.read_csv("../../datasets/housing.csv")
 
 print(df.head())
 print(df.describe())
